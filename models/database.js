@@ -9,11 +9,11 @@ const sequelize = new Sequelize(
     port: '5432',
     dialect: 'postgres'
   }*/
-  'd9rufjoo05vjna', //db
-  'zoxetsctlkuizb', //user
-  '184c9c7c3382a5a29c58e681e4eae429932cd4be4243ec403955ed44dd6404b6', //password
+  'deu39it4q4o0uf', //db
+  'cijnsgwutgegec', //user
+  'ded5afcaf6e451c986f37fc206d4acd199f3971b8f1f71a0e5b68cc58b197d0a', //password
   {
-    host: 'ec2-63-32-248-14.eu-west-1.compute.amazonaws.com',
+    host: 'ec2-176-34-211-0.eu-west-1.compute.amazonaws.com',
     port: '5432',
     dialect: 'postgres',
     dialectOptions: {
