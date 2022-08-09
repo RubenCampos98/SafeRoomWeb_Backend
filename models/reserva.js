@@ -38,7 +38,7 @@ var Reserva = db.define('reservas', {
   },
   estado: {
     type: Sequelize.INTEGER,
-    allowNull: false
+    default : 1
   },
   limpeza: {
     type: Sequelize.INTEGER,

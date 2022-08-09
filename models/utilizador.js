@@ -33,10 +33,10 @@ var Utilizador = db.define('utilizadores', {
   },
   estadoconta: {
     type: Sequelize.INTEGER,
-    allowNull: false
+    default : 0
   },
   datavalidacao: {
-      type: Sequelize.DATE
+    type: Sequelize.DATE
   }
 },
 {

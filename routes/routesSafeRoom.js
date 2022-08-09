@@ -1,15 +1,15 @@
 const express = require('express')
 const router = express.Router()
 
-const utilizadores = require('../controllers/utilizadoresController')
-const centros = require('../controllers/centrosController')
-const cancelamentos = require('../controllers/cancelamentosController')
-const salas = require('../controllers/salasController')
-const reservas = require('../controllers/reservasController')
-const notificacoes = require('../controllers/notificacoesController')
-const notificacoesReservas = require('../controllers/NotificacaoResController')
-const utilizadoresNotificacoes = require('../controllers/UserNotificacaoController')
-const utilizadoresCentros = require('../controllers/UserCentroController')
+const utilizadores = require('../controllers/utilizadores')
+const centros = require('../controllers/centros')
+const cancelamentos = require('../controllers/cancelamentos')
+const salas = require('../controllers/salas')
+const reservas = require('../controllers/reservas')
+const notificacoes = require('../controllers/notificacoes')
+const notificacoesReservas = require('../controllers/notificacoes_reservas')
+const utilizadoresNotificacoes = require('../controllers/utilizadores_notificacoes')
+const utilizadoresCentros = require('../controllers/utilizadores_centros')
 
 router.get('/login', (req, res) => {
   res.send('Criadooo')
@@ -17,7 +17,10 @@ router.get('/login', (req, res) => {
 
 //------------------Utilizadores------------------
 router.get('/users', utilizadores.listarUtilizadores)
-
+router.get('/visualizar_user/:id_user', utilizadores.visualizarUtilizador)
+router.post('/criar_user', utilizadores.adicionarUtilizador)
+router.put('/editar_user/:id_user', utilizadores.editarUtilizador)
+router.post('/apagar_user', utilizadores.apagarUtilizador)
 //------------------Centros------------------
 router.get('/centros', centros.listarCentros)
 

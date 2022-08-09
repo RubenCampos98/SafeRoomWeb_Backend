@@ -9,6 +9,7 @@ app.set('port', process.env.PORT|| 3001);
 
 //Middlewares
 app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 
 // Configurar Headers do CORS
 app.use((req, res, next) => {
@@ -28,3 +29,5 @@ app.use('/api', routes)
 app.listen(app.get('port'),()=>{
 console.log("Start server on port "+app.get('port'))
 })
+
+module.exports = app;

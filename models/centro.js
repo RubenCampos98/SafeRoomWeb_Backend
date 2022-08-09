@@ -13,7 +13,7 @@ var Centro = db.define('centros', {
   },
   estado: {
     type: Sequelize.INTEGER,
-    allowNull: false
+    default : 1
   },
   notas: {
     type: Sequelize.STRING
