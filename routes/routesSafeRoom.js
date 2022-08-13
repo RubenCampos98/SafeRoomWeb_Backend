@@ -21,18 +21,28 @@ router.get('/visualizar_user/:id_user', utilizadores.visualizarUtilizador)
 router.post('/criar_user', utilizadores.adicionarUtilizador)
 router.put('/editar_user/:id_user', utilizadores.editarUtilizador)
 router.post('/apagar_user', utilizadores.apagarUtilizador)
+//router.delete('/delete_user/:id_user', utilizadores.apagarUtilizador)
 //------------------Centros------------------
 router.get('/centros', centros.listarCentros)
-
+router.get('/visualizar_centro/:id_centro', centros.visualizarCentro)
+router.post('/criar_centro', centros.adicionarCentro)
+router.put('/editar_centro/:id_centro', centros.editarCentro)
+router.post('/apagar_centro', centros.apagarCentro)
 //------------------Cancelamentos------------------
 router.get('/cancelamentos', cancelamentos.listarCancelamentos)
 
 //------------------Salas------------------
 router.get('/salas', salas.listarSalas)
-
+router.get('/visualizar_sala/:id_sala', salas.visualizarSala)
+router.post('/criar_sala', salas.adicionarSala)
+router.put('/editar_sala/:id_sala', salas.editarSala)
+router.post('/apagar_sala', salas.apagarSala)
 //------------------Reservas------------------
 router.get('/reservas', reservas.listarReservas)
-
+router.get('/visualizar_reserva/:id_reserva', reservas.visualizarReserva)
+router.post('/criar_reserva', reservas.adicionarReserva)
+router.put('/editar_reserva/:id_reserva', reservas.editarReserva)
+router.post('/apagar_reserva', reservas.apagarReserva)
 //------------------Notificacoes------------------
 router.get('/notificacoes', notificacoes.listarNotificacoes)
 

@@ -11,6 +11,10 @@ var Centro = db.define('centros', {
     type: Sequelize.STRING,
     allowNull: false
   },
+  nome: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
   estado: {
     type: Sequelize.INTEGER,
     default : 1

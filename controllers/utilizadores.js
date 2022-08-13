@@ -7,7 +7,11 @@ sequelize.sync()
 
 //------------------------------------------List------------------------------------------
 controllers_Utilizador.listarUtilizadores = async(req, res) => {
-  const data = await Utilizador.findAll()
+  const data = await Utilizador.findAll({
+    order: [
+      ['nome', 'ASC']
+    ]
+  })
   .then(function(data){
     return data
   })
@@ -101,9 +105,11 @@ controllers_Utilizador.editarUtilizador = async(req, res) => {
 controllers_Utilizador.apagarUtilizador = async(req, res) => {
   const {id_user} = req.body;
   const del = await Utilizador.destroy({
-    where: {
-      id_user: id_user
-    }
+    where: { id_user: id_user }
+  })
+  .catch(error =>{
+    console.log(error)
+    return error
   })
   res.json({
     success: true, 
