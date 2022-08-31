@@ -27,7 +27,7 @@ controllers_Utilizador.bulkInsert = async function(req, res){
   try{
     let users = await Utilizador.bulkCreate(req.body.csvArray)
     res.status(201).json({
-      message: 'Inseridos com sucesso ',
+      message: 'Inseridos com sucesso',
       data: users
     })
   } catch(error){
