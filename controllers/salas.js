@@ -1,5 +1,6 @@
 var sequelize = require('../models/database')
 var Sala = require('../models/sala')
+var Centro = require('../models/centro')
 
 const controllers_Sala = {} 
 
@@ -7,7 +8,9 @@ sequelize.sync()
 
 //-------------List-------------
 controllers_Sala.listarSalas = async(req, res) => {
-  const data = await Sala.findAll()
+  const data = await Sala.findAll({
+    include: [Centro]
+  })
   .then(function(data){
     return data
   })
@@ -75,7 +78,7 @@ controllers_Sala.editarSala = async(req, res) => {
     alocacaomax,
     limpeza
   } = req.body;
-  const data = await Sala.create({
+  const data = await Sala.update({
     id_centro: id_centro,
     id_cancelamento: id_cancelamento,
     nome: nome,

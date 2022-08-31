@@ -23,6 +23,20 @@ controllers_Utilizador.listarUtilizadores = async(req, res) => {
 
 //------------------------------------------Add-------------------------------------------
 
+controllers_Utilizador.bulkInsert = async function(req, res){
+  try{
+    let users = await Utilizador.bulkCreate(req.body.csvArray)
+    res.status(201).json({
+      message: 'ola ',
+      data: users
+    })
+  } catch(error){
+    res.status(404).json({
+      message: 'erroo', error
+    })
+  }
+}
+
 controllers_Utilizador.adicionarUtilizador = async(req, res) => {
   const { 
     nome, 

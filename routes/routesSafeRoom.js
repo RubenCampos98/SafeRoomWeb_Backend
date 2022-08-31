@@ -21,13 +21,14 @@ router.get('/visualizar_user/:id_user', utilizadores.visualizarUtilizador)
 router.post('/criar_user', utilizadores.adicionarUtilizador)
 router.put('/editar_user/:id_user', utilizadores.editarUtilizador)
 router.post('/apagar_user', utilizadores.apagarUtilizador)
-//router.delete('/delete_user/:id_user', utilizadores.apagarUtilizador)
+router.post('/criar_users', utilizadores.bulkInsert)
 //------------------Centros------------------
 router.get('/centros', centros.listarCentros)
 router.get('/visualizar_centro/:id_centro', centros.visualizarCentro)
 router.post('/criar_centro', centros.adicionarCentro)
 router.put('/editar_centro/:id_centro', centros.editarCentro)
 router.post('/apagar_centro', centros.apagarCentro)
+router.post('/criar_centro_bulk', centros.bulkInsert)
 //------------------Cancelamentos------------------
 router.get('/cancelamentos', cancelamentos.listarCancelamentos)
 

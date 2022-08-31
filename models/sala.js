@@ -44,7 +44,7 @@ var Sala = db.define('salas', {
   },
   estado: {
     type: Sequelize.INTEGER,
-    default : 1
+    default: 1
   }
 },
 {

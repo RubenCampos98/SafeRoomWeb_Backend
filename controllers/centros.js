@@ -19,6 +19,20 @@ controllers_Centros.listarCentros = async(req, res) => {
 
 //---------------Add---------------------
 
+controllers_Centros.bulkInsert = async function(req, res){
+  try{
+    let centros = await Centros.bulkCreate(req.body)
+    res.status(201).json({
+      message: 'ola',
+      data: centros
+    })
+  } catch(error){
+    res.status(404).json({
+      message: 'erro'
+    })
+  }
+}
+
 controllers_Centros.adicionarCentro = async(req, res) => {
   const { 
     localidade,

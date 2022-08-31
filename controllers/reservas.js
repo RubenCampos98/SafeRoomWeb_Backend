@@ -1,5 +1,7 @@
 var sequelize = require('../models/database')
 var Reserva = require('../models/reserva')
+var User = require('../models/utilizador')
+var Sala = require('../models/sala')
 
 const controllers_Reserva = {}
 
@@ -7,7 +9,15 @@ sequelize.sync()
 
 //-------------List-------------
 controllers_Reserva.listarReservas = async(req, res) => {
-  const data = await Reserva.findAll()
+  const data = await Reserva.findAll({
+    order: [
+      ['data', 'ASC']
+    ],
+    include: [
+      User,
+      Sala
+    ]
+  })
   .then(function(data){
     return data
   })
