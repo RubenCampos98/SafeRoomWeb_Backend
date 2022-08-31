@@ -18,7 +18,7 @@ controllers_Centros.listarCentros = async(req, res) => {
 }
 
 //---------------Add---------------------
-/* 
+
 controllers_Centros.bulkInsert = async function(req, res){
   try{
     let centros = await Centros.bulkCreate(req.body)
@@ -31,7 +31,7 @@ controllers_Centros.bulkInsert = async function(req, res){
       message: 'erro'
     })
   }
-} */
+}
 
 controllers_Centros.adicionarCentro = async(req, res) => {
   const { 
