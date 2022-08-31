@@ -23,7 +23,7 @@ controllers_Centros.bulkInsert = async function(req, res){
   try{
     let centros = await Centros.bulkCreate(req.body)
     res.status(201).json({
-      message: 'ola',
+      message: 'ola!',
       data: centros
     })
   } catch(error){
